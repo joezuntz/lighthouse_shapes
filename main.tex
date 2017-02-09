@@ -15,13 +15,13 @@
 % Custom commands from LSST DESC, see texmf/styles/lsstdesc_macros.sty
 \usepackage{lsstdesc_macros}
 
-\usepackage{graphicx}
+\usepackage{graphicx,color,todonotes}
 \graphicspath{{./}{./figures/}}
 \bibliographystyle{apj}
 
 % Add your own macros here:
 
-
+\newcommand\TODO[1]{\todo[color=red!40, inline, size=\small]{TODO: #1}}
 
 % 
 % ======================================================================
@@ -34,7 +34,7 @@
 
 \begin{abstract}
 
-LSST weak lensing science has unprecedented requirements for the modelling of the LSST point spread function, the accurate measurement of galaxy shapes in the face of blending. In this document, we describe the results of a workshop on these issues held at Point Montara in February 2017. We discuss available solutions for the problems of PSF modelling and shape measurement, their remaining shortcomings. In addition, we lay out a strategy for handling multi-epoch image date in a data structure useful with present weak lensing image analysis codes and a framework for validation of PSF and shape measurement through image simulations.
+LSST weak lensing science has unprecedented requirements for the modelling of the LSST point spread function and the accurate measurement of galaxy shapes in the face of blending. In this document, we describe the results of a workshop on these issues held at Point Montara in February 2017. We discuss available solutions for the PSF modelling and shape measurement, lessons learned from their use in the Dark Energy Survey, remaining open issues, and progress and plans towards fixing those. In addition, we lay out a strategy for handling multi-epoch image data in an API useful with present weak lensing image analysis codes and a framework for validating PSF and shape measurement through image simulations.
 
 \end{abstract}
 
@@ -49,6 +49,8 @@ LSST weak lensing science has unprecedented requirements for the modelling of th
 \section{Introduction}
 \label{sec:intro}
 
+\TODO{We skip the introduction for now, but keep an introduction to this \LaTeX\xspace class for reference.}
+
 This is a paper and note template for the LSST DESC \citep{Overview,ScienceBook,WhitePaper}.
 You can delete all this tutorial text whenever you like.
 
@@ -57,11 +59,6 @@ Documents can be compiled using the provided \code{Makefile}.
 The command \code{make} with no arguments compiles \code{main.tex} using the  \code{lsstdescnote.cls} style.
 If you want to upgrade your Note into a journal article, just choose a journal name, between \code{make apj} (ApJ preprint format), \code{make apjl} (which uses the \code{emulateapj} style), \code{make prd}, \code{make prl}, and \code{make mnras}.
 
-
-% ----------------------------------------------------------------------
-
-\section{Commands}
-\label{sec:commands}
 
 There are a number of useful \LaTeX\xspace commands predefined in \code{macros.tex}.
 Notice that the section labels are prefixed with \code{sec:} to allow the use of the \verb=\secref= command to reference a section (\ie, \secref{intro}).
@@ -72,11 +69,6 @@ However, because we have specified this directory in our \verb=\graphicspath= we
 
 The \code{macros.tex} package also contains some conventional scientific units like \angstrom, \GeV, \Msun, etc. and some editorial tools for highlighting \FIXME{issues}, \CHECK{text to be checked}, \COMMENT{comments}, and \NEW{new additions}.
 
-
-% ----------------------------------------------------------------------
-
-\section{Methods}
-\label{sec:methods}
 
 Similar to the figure before, here we have included a table of data from \code{tables/table.tex}.
 Notice that again we are able to reference \tabref{example} with the \verb=\tabref= command using the \code{tab:} prefix.
@@ -91,11 +83,6 @@ Equations appear as follows, and can be referred to as, for example, \eqnref{exa
 \end{equation}
 
 
-% ----------------------------------------------------------------------
-
-\section{Results}
-\label{sec:results}
-
 \figref{example} shows an example figure, referred to with the \verb=\figref= command and the \code{fig:} prefix.
 
 \begin{figure}
@@ -103,40 +90,56 @@ Equations appear as follows, and can be referred to as, for example, \eqnref{exa
 \caption{An example figure: the LSST DESC logo, copied from \code{.logos/desc-logo.png} into \code{figures/example.png}. \label{fig:example}}
 \end{figure}
 
-
-% ----------------------------------------------------------------------
-
-\section{Discussion}
-\label{sec:discussion}
-
 If you are planning on committing your paper to GitHub, it's a good idea to write your tex as one sentence per line.
 This allows for an easier \code{diff} of changes.
 It also makes sense to think of latex as \emph{code}, and sentences as logical statements, occupying one line each.
 Each line must ``compile'' in the mind of the reader.
 
+% ----------------------------------------------------------------------
+
+\section{MEDS: Multi-epoch data structures}
+
+\TODO{write why we need this: unified API for PSF modelling / shape measurement / photometry codes to access single frame image, weight, astrometry and PSF information}
+
+\subsection{High-order instrumental astrometric distortions in MEDS}
+
+\TODO{Gary, Troxel, Mike, Erin: describe how this is implemented}
+
+
+\subsection{A MEDS API for LSST}
+
+\TODO{Jim, Erin, Joe, Josh, Daniel: describe how this is implemented; it seems like an API that generates an object's MEDS information on the fly could be feasible}
 
 % ----------------------------------------------------------------------
 
-\section{Conclusions}
-\label{sec:conclusions}
+\section{PIFF: PSFs in the Full FOV}
 
-Here's a summary of what we just reported.
+\TODO{write an introduction of why we need this: astrometric distortions -> WCS, coherent patterns over full FOV, Zernickes, better interpolation schemes}
 
-We can draw the following well-organized and neatly-formatted conclusions:
-\begin{itemize}
-  \item This is important.
-  \item We can measure some number with some precision.
-  \item This has some implications.
-\end{itemize}
+\subsection{Gaussian Process Interpolation}
 
-Here are some parting thoughts.
+\TODO{Josh, Gary, Mike, Niall, Pierre-Francois, Ami: describe}
 
+\section{Shape measurement}
+
+\TODO{quick intro of lessons learned from DES Y1}
+
+\subsection{BFD on real data}
+
+\TODO{Gary, Daniel, Joe, Katie, Ami: describe}
+
+
+% ----------------------------------------------------------------------
+
+\section{An image simulation pipeline for PSF and shape measurement validation}
+
+\TODO{Joe, Mike, Erin, Troxel, Gary, Daniel, Niall, Ami, Katie: describe}
 
 % ----------------------------------------------------------------------
 
 \subsection*{Acknowledgments}
 
-Here is where you should add your specific acknowledgments, remembering that some standard thanks will be added via the \code{acknowledgments.tex} file.
+We acknowledge financial and organizational support for our workshop from LSSTC and KIPAC and the hospitality of Hostelling International.
 
 \input{acknowledgments}
 
