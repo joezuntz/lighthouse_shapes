@@ -4,8 +4,7 @@
 
 *Lighthouse People*
 
-We describe LSST requirements, available solutions, and their remaining shortcomings, for the related issues of PSF modelling, shape measurement, and validation through image simulations, for LSST weak lensing science.
-
+LSST weak lensing science has unprecedented requirements for the modelling of the LSST point spread function, the accurate measurement of galaxy shapes in the face of blending. In this document, we describe the results of a workshop on these issues held at Point Montara in February 2017. We discuss available solutions for the problems of PSF modelling and shape measurement, their remaining shortcomings. In addition, we lay out a strategy for handling multi-epoch image date in a data structure useful with present weak lensing image analysis codes and a framework for validation of PSF and shape measurement through image simulations.
 
 ## Editing this Paper
 
