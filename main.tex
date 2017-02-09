@@ -15,13 +15,11 @@
 % Custom commands from LSST DESC, see texmf/styles/lsstdesc_macros.sty
 \usepackage{lsstdesc_macros}
 
-\usepackage{graphicx,color,todonotes}
+\usepackage{graphicx}
 \graphicspath{{./}{./figures/}}
 \bibliographystyle{apj}
 
 % Add your own macros here:
-
-\newcommand\TODO[1]{\todo[color=red!40, inline, size=\small]{TODO: #1}}
 
 % 
 % ======================================================================
@@ -49,7 +47,7 @@ LSST weak lensing science has unprecedented requirements for the modelling of th
 \section{Introduction}
 \label{sec:intro}
 
-\TODO{We skip the introduction for now, but keep an introduction to this \LaTeX\xspace class for reference.}
+\FIXME{We skip the introduction for now, but keep an introduction to this \LaTeX\xspace class for reference.}
 
 This is a paper and note template for the LSST DESC \citep{Overview,ScienceBook,WhitePaper}.
 You can delete all this tutorial text whenever you like.
@@ -99,41 +97,41 @@ Each line must ``compile'' in the mind of the reader.
 
 \section{MEDS: Multi-epoch data structures}
 
-\TODO{write why we need this: unified API for PSF modelling / shape measurement / photometry codes to access single frame image, weight, astrometry and PSF information}
+\FIXME{write why we need this: unified API for PSF modelling / shape measurement / photometry codes to access single frame image, weight, astrometry and PSF information}
 
 \subsection{High-order instrumental astrometric distortions in MEDS}
 
-\TODO{Gary, Troxel, Mike, Erin: describe how this is implemented}
+\FIXME{Gary, Troxel, Mike, Erin: describe how this is implemented}
 
 
 \subsection{A MEDS API for LSST}
 
-\TODO{Jim, Erin, Joe, Josh, Daniel: describe how this is implemented; it seems like an API that generates an object's MEDS information on the fly could be feasible}
+\FIXME{Jim, Erin, Joe, Josh, Daniel: describe how this is implemented; it seems like an API that generates an object's MEDS information on the fly could be feasible}
 
 % ----------------------------------------------------------------------
 
 \section{PIFF: PSFs in the Full FOV}
 
-\TODO{write an introduction of why we need this: astrometric distortions -> WCS, coherent patterns over full FOV, Zernickes, better interpolation schemes}
+\FIXME{write an introduction of why we need this: astrometric distortions -> WCS, coherent patterns over full FOV, Zernickes, better interpolation schemes}
 
 \subsection{Gaussian Process Interpolation}
 
-\TODO{Josh, Gary, Mike, Niall, Pierre-Francois, Ami: describe}
+\FIXME{Josh, Gary, Mike, Niall, Pierre-Francois, Ami: describe}
 
 \section{Shape measurement}
 
-\TODO{quick intro of lessons learned from DES Y1}
+\FIXME{quick intro of lessons learned from DES Y1}
 
 \subsection{BFD on real data}
 
-\TODO{Gary, Daniel, Joe, Katie, Ami: describe}
+\FIXME{Gary, Daniel, Joe, Katie, Ami: describe}
 
 
 % ----------------------------------------------------------------------
 
 \section{An image simulation pipeline for PSF and shape measurement validation}
 
-\TODO{Joe, Mike, Erin, Troxel, Gary, Daniel, Niall, Ami, Katie: describe}
+\FIXME{Joe, Mike, Erin, Troxel, Gary, Daniel, Niall, Ami, Katie: describe}
 
 % ----------------------------------------------------------------------
 
