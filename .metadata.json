@@ -1,0 +1,10 @@
+{
+    "authors": "Lighthouse People",
+    "title": "Problems and Solutions for LSST Shape Measurement",
+    "description": "We describe LSST requirements, available solutions, and their remaining shortcomings, for the related issues of PSF modelling, shape measurement, and validation through image simulations, for LSST weak lensing science.",
+    "short_title": "LSST Shape Measurement",
+    "serial_number": "0000",
+    "repo_name": "lighthouse_notes",
+    "folder_name": "desc-0000-lighthouse_notes-lsst_shape_measurement",
+    "default_format": "tex"
+}
