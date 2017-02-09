@@ -17,15 +17,14 @@ install:
 
 # Now make the PDF, and move it to the top level, ready for deployment.
 script:
-    - make -C doc/desc-0000-lighthouse_notes-lsst_shape_measurement
-    - cp doc/desc-0000-lighthouse_notes-lsst_shape_measurement/desc-0000-lighthouse_notes-lsst_shape_measurement.pdf .
+    - make
 
 # Finally, force-push the PDF to an otherwise empty "pdf" branch:
 after_success: |
     if [ -n "$GITHUB_API_KEY" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
         git checkout --orphan pdf
         git rm -rf .
-        git add -f desc-0000-lighthouse_notes-lsst_shape_measurement.pdf
+        git add -f lighthouse_shapes.pdf
         git -c user.name='travis' -c user.email='travis' commit -m init
-        git push -q -f https://YourGitHubUserName:$GITHUB_API_KEY@github.com/DarkEnergyScienceCollaboration/lighthouse_notes pdf
+        git push -q -f https://danielgruen:$GITHUB_API_KEY@github.com/danielgruen/lighthouse_shapes pdf
     fi
