@@ -103,6 +103,8 @@ Each line must ``compile'' in the mind of the reader.
 
 \FIXME{Gary, Troxel, Mike, Erin: describe how this is implemented}
 
+The \textsc{meds} python class would allow for flexibly swapping out the WCS in the input file FITS header by something more elaborate if we have the base class provide access functions for the \texttt{cutout\_row/col} variables (in addition to the Jacobian) \FIXME{(Erin)}. A derived class could then implement these differently, e.g. by evaluating Gary's WCS \FIXME{(Gary)}. Both this and the way shape measurement codes find the matching PSFEx model files could be implemented by an external simple table that maps exposure and CCD IDs to auxiliary filenames.
+
 
 \subsection{A MEDS API for LSST}
 
@@ -125,6 +127,12 @@ Each line must ``compile'' in the mind of the reader.
 \subsection{BFD on real data}
 
 \FIXME{Gary, Daniel, Joe, Katie, Ami: describe}
+
+The two components missing for this are
+\begin{itemize}
+\item a variant of \texttt{simpleImage} (see \texttt{momentcalc.py} in the BFD repository) that can take multiple postage stamps of the same galaxies with their respective WCS registrations (in the form of the position of a centroid estimated in WCS and transformed to the postage stamp pixel system) and Jacobians, PSF models, and an estimate of the overall centroid in WCS \FIXME{(Katie)}
+\item a function that can get these inputs to the new variant of \texttt{simpleImage} from a MEDS file (using the python \texttt{meds} or a derived class) \FIXME{(Daniel)}
+\end{itemize}
 
 
 % ----------------------------------------------------------------------
